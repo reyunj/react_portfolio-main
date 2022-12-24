@@ -1,5 +1,6 @@
 import React from "react";
 import hero from "../assets/images/hero.png";
+import {FaFacebook, FaTelegram, FaTwitter, FaYoutube} from "react-icons/fa"
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
 
@@ -36,9 +37,21 @@ const Hero = () => {
                 <MdOutlineKeyboardArrowRight size={25} className="ml-1" />
               </span>
             </Link>
+            <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
+              <a href= "https://www.facebook.com/reyunj/" target="_blank" className="text-gray-600 hover:text-white cursor-pointer">
+                <FaFacebook/>
+              </a>
+              <a href= "https://www.youtube.com/channel/UC9mGXwQCYM1PbLJ5rqZ_ZJg" target="_blank" className="text-gray-600 hover:text-white cursor-pointer">
+                <FaYoutube/>
+              </a>
+              <a href= "https://t.me/reyunj" target="_blank" className="text-gray-600 hover:text-white cursor-pointer ">
+                <FaTelegram/>
+              </a>
+              <a href= "https://twitter.com/junrey1296" target="_blank" className="text-gray-600 hover:text-white cursor-pointer ">
+                <FaTwitter/>
+              </a>
+            </div>
           </div>
-          <div className="hidden lg:flex flex-col top-[35%] left-0 fixed">
-    </div>
         </div>
       </div>
     </section>
