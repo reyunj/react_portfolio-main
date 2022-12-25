@@ -17,7 +17,7 @@ const About = () => {
           <div className="p-2">
             <div className="text-gray-300 my-3">
               <p className="text-justify leading-7 w-11/12 mx-auto">
-              I have 5 years of experience in IT Industry, including hardware and software.
+              I have 5 years of work  experience in IT Industry, including hardware and software.
             Currently, I love to work on web application using technologies like
             React, Tailwind, Next JS and Vite.
               </p>
@@ -37,7 +37,7 @@ const About = () => {
             </div>
           </div>
           <div>
-            <div className="lg:w-96 h-full">
+            <div className="lg:w-96 h-full ">
               <img
                 src={aboutImg}
                 alt=""
