@@ -71,9 +71,8 @@ const Experience = () => {
   return (
     <div
       name="experience"
-      className="bg-gradient-to-b from-gray-800 to-black w-full h-screen"
-    >
-      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+      className="py-10 text-white">
+      <div className="max-w-screen-lg mx-auto p-auto flex flex-col justify-center w-full h-full text-white">
         <div className="mt-8 text-gray-100 text-center">
         <h3 className="text-4xl font-semibold">
           My <span className="text-cyan-600">Experience</span>

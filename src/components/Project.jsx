@@ -26,17 +26,16 @@ const Project = () => {
   return (
     <div
       name="portfolio"
-      className="bbg-gradient-to-b from-gray-800 to-black w-full h-screen"
-    >
+      className="py-10 text-white">
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div div className="mt-8 text-gray-100 text-center">
         <h3 className="text-4xl font-semibold">
           My <span className="text-cyan-600">Portfolio</span>
         </h3>
-          <p className="text-gray-400 mt- text-lg">Check out some of my work right here</p>
+          <p className="text-gray-400 mt-3 text-lg">Check out some of my work right here</p>
         </div>
 
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
+        <div className="w-full grid sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
           {portfolios.map(({ id, src, live_link }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
               <img
@@ -45,7 +44,7 @@ const Project = () => {
                 className="rounded-md duration-200 hover:scale-105"
               />
               <div className="flex justify-center">
-                <a href = {live_link} target ="_blank" className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                <a href = {live_link} target ="_blank" className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg style: 400">
                   Demo
                 </a>
               </div>
