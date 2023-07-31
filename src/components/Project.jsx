@@ -9,17 +9,17 @@ const Project = () => {
     {
       id: 1,
       src: port,
-      live_link: "https://reyunj.ml/",
+      live_link: "https://my-porfolio-five-jet.vercel.app/",
     },
     {
       id: 2,
       src: gym,
-      live_link: "https://junrey-gym.ml/",
+      live_link: "https://gym-typescript-seven.vercel.app/",
     },
     {
       id: 3,
       src: weather,
-      live_link: "https://junrey-weather.ml/",
+      live_link: "https://weather-plum-seven.vercel.app/",
     },
   ];
 
