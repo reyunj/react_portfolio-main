@@ -6,7 +6,7 @@ const Contact = () => {
     { logo: "logo-whatsapp", text: "(+63)933-4823-965" },
     {
       logo: "location",
-      text: "Estaca, Compostela, Cebu",
+      text: "Maguikay, Mandaue City, Cebu",
     },
   ];
   return (
