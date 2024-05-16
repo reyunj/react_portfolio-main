@@ -21,11 +21,11 @@ const Contact = () => {
           className="mt-16 flex md:flex-row flex-col
          gap-6 max-w-5xl bg-gray-800 md:p-6 p-2 rounded-lg mx-auto"
         >
-          <form className="flex flex-col flex-1 gap-5">
-            <input type="text" placeholder="Your Name" />
-            <input type="Email" placeholder="Your Email Address" />
-            <textarea placeholder="Your Message" rows={10}></textarea>
-            <button className="btn-primary w-fit">Send Message</button>
+          <form className="flex flex-col flex-1 gap-5"  id="contactForm" action={process.env.FABFORM_ENDPOINT} method="POST">
+            <input type="text" id="name" name="name" required placeholder="Your Name" />
+            <input type="Email" id="email" name="email" required placeholder="Your Email Address" />
+            <textarea id="message" name="message" required placeholder="Your Message" rows={10}></textarea>
+            <button type="submit" className="btn-primary w-fit">Send Message</button>
           </form>
           <div className="flex flex-col  gap-7 ">
             {contact_info.map((contact, i) => (
