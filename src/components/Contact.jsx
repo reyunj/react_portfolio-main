@@ -45,7 +45,7 @@ const Contact = () => {
     setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
     axios({
       method: 'POST',
-      url: 'https://formspree.io/[your-formspree-endpoint]',
+      url: 'https://formspree.io/f/xnqerrlk',
       data: inputs,
     })
       .then((response) => {
@@ -78,8 +78,7 @@ const Contact = () => {
           className="mt-16 flex md:flex-row flex-col
          gap-6 max-w-5xl bg-gray-800 md:p-6 p-2 rounded-lg mx-auto"
         >
-          <form className="flex flex-col flex-1 gap-5" onSubmit={handleOnSubmit} action="https://formspree.io/f/xnqerrlk"
-  method="POST">
+          <form className="flex flex-col flex-1 gap-5" onSubmit={handleOnSubmit}>
             <input type="text" id="name" name="name" required placeholder="Your Name" />
             <input id="email"
           type="email"
