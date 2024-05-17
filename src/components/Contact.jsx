@@ -1,6 +1,63 @@
 import React from "react";
+import axios from 'axios';
 
 const Contact = () => {
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null },
+  });
+  const [inputs, setInputs] = useState({
+    email: '',
+    message: '',
+  });
+  const handleServerResponse = (ok, msg) => {
+    if (ok) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg },
+      });
+      setInputs({
+        email: '',
+        message: '',
+      });
+    } else {
+      setStatus({
+        info: { error: true, msg: msg },
+      });
+    }
+  };
+  const handleOnChange = (e) => {
+    e.persist();
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null },
+    });
+  };
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+    axios({
+      method: 'POST',
+      url: 'https://formspree.io/[your-formspree-endpoint]',
+      data: inputs,
+    })
+      .then((response) => {
+        handleServerResponse(
+          true,
+          'Thank you, your message has been submitted.',
+        );
+      })
+      .catch((error) => {
+        handleServerResponse(false, error.response.data.error);
+      });
+  };
   const contact_info = [
     { logo: "mail", text: "junrey1296@gmail.com" },
     { logo: "logo-whatsapp", text: "(+63)933-4823-965" },
@@ -21,12 +78,30 @@ const Contact = () => {
           className="mt-16 flex md:flex-row flex-col
          gap-6 max-w-5xl bg-gray-800 md:p-6 p-2 rounded-lg mx-auto"
         >
-          <form className="flex flex-col flex-1 gap-5"  id="contactForm" action={process.env.FABFORM_ENDPOINT} method="POST">
+          <form className="flex flex-col flex-1 gap-5" onSubmit={handleOnSubmit} action="https://formspree.io/f/xnqerrlk"
+  method="POST">
             <input type="text" id="name" name="name" required placeholder="Your Name" />
-            <input type="Email" id="email" name="email" required placeholder="Your Email Address" />
-            <textarea id="message" name="message" required placeholder="Your Message" rows={10}></textarea>
-            <button type="submit" className="btn-primary w-fit">Send Message</button>
+            <input id="email"
+          type="email"
+          name="_replyto"
+          onChange={handleOnChange}
+          required
+          value={inputs.email} placeholder="Your Email Address" />
+            <textarea id="message"
+          name="message"
+          onChange={handleOnChange}
+          required
+          value={inputs.message} placeholder="Your Message" rows={10}></textarea>
+            <button type="submit" disabled={status.submitting} className="btn-primary w-fit"> {!status.submitting
+            ? !status.submitted
+              ? 'Submit'
+              : 'Submitted'
+            : 'Submitting...'}</button>
           </form>
+          {status.info.error && (
+        <div className="error">Error: {status.info.msg}</div>
+      )}
+      {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
           <div className="flex flex-col  gap-7 ">
             {contact_info.map((contact, i) => (
               <div
