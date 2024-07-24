@@ -28,9 +28,12 @@ const Contact = () => {
 
       Swal.fire({
         icon: "success",
-        title: "Success!",
-        text: "Thank you, Your message has been submitted.",
-    
+        title: "Thank you!",
+        text: "Your message has been submitted.",
+        type:"confirm"
+      }).then(() => {
+ 
+        window.location.reload();
       });
     } else {
       setStatus({
