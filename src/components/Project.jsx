@@ -2,6 +2,9 @@ import React from "react";
 import port from "../assets/images/project-1.png";
 import gym from "../assets/images/project-2.jpg";
 import weather from "../assets/images/project-3.jpg";
+import agdp from "../assets/images/agdp.png"
+import lux from "../assets/images/lux.png"
+import magis from "../assets/images/magis.png"
 
 
 const Project = () => {
@@ -20,6 +23,21 @@ const Project = () => {
       id: 3,
       src: weather,
       live_link: "https://weather-plum-seven.vercel.app/",
+    },
+    {
+      id: 4,
+      src: agdp,
+      live_link: "https://agdptech.com/",
+    },
+    {
+      id: 5,
+      src: magis,
+      live_link: "https://magis-website.netlify.app/",
+    },
+    {
+      id: 6,
+      src: lux,
+      live_link: "https://www.luxauto.io/",
     },
   ];
 

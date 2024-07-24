@@ -1,10 +1,18 @@
 import React from "react";
 import aboutImg from "../assets/images/about.jpg";
 const About = () => {
+  const startDate = new Date('2017-01-01');
+  const currentDate = new Date();
+  
+  const diffInMonths = (currentDate.getFullYear() - startDate.getFullYear()) * 12
+                      + currentDate.getMonth() - startDate.getMonth();
+  
+  const years = Math.floor(diffInMonths / 12);
+  const months = diffInMonths % 12;
   const info = [
-    { text: "Years experience", count: "04" },
-    { text: "Completed Projects", count: "04" },
-    { text: "Companies Work", count: "03" },
+ 
+    { text: "Completed Projects", count: "06" },
+    { text: "Companies Work", count: "04" },
   ];
   return (
     <section id="about" className="py-10 text-white">
@@ -17,11 +25,10 @@ const About = () => {
           <div className="p-2">
             <div className="text-gray-300 my-3">
               <p className="text-justify leading-7 w-11/12 mx-auto">
-              I have 5 years of work  experience in IT Industry, including hardware and software.
-            Currently, I love to work on web application using technologies like
-            React, Tailwind, Next JS and Vite.
+              I have {years} years  and {months} months of work  experience in IT Industry, including hardware and software.
+              Currently, I am passionate about developing web applications.
               </p>
-              <div className="flex mt-10 items-center gap-7">
+              <div className="flex mt-10 items-center justify-center gap-7">
                 {info.map((content) => (
                   <div key={content.text}>
                     <h3 className="md:text-4xl text-2xl font-semibold text-white">
@@ -41,6 +48,7 @@ const About = () => {
               <img
                 src={aboutImg}
                 alt=""
+                className="rounded-lg"
               />
             </div>
           </div>
