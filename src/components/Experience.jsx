@@ -34,7 +34,7 @@ const Experience = () => {
       id: 4,
       src: reactImage,
       title: "React",
-      style: "shadow-blue-600",
+      style: "shadow-blue-400",
     },
     {
       id: 5,
@@ -64,7 +64,7 @@ const Experience = () => {
       id: 9,
       src: sanity,
       title: "Sanity",
-      style: "shadow-blue-400",
+      style: "shadow-red-400",
     },
   ];
 

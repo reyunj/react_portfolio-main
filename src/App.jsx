@@ -10,7 +10,7 @@ import SocialLinks from "./components/SocialLinks";
 
 const App = () => {
   return (
-    <div>
+    <main>
       <Navbar />
       <SocialLinks/>
       <Hero />
@@ -19,7 +19,7 @@ const App = () => {
       <Project />
       <Contact />
       <Footer />
-    </div>
+    </main>
   );
 };
 

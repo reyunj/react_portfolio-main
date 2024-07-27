@@ -63,7 +63,7 @@ const Project = () => {
               />
               <div className="flex justify-center">
                 <a href = {live_link} target ="_blank" className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg style: 400">
-                  Demo
+                  Visit Live
                 </a>
               </div>
             </div>
