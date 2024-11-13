@@ -5,6 +5,8 @@ import weather from "../assets/images/project-3.jpg";
 import agdp from "../assets/images/agdp.png"
 import lux from "../assets/images/lux.png"
 import magis from "../assets/images/magis.png"
+import overlay from "../assets/images/overlay.png"
+import exam from "../assets/images/exam.png"
 
 
 const Project = () => {
@@ -39,6 +41,17 @@ const Project = () => {
       src: lux,
       live_link: "https://www.luxauto.io/",
     },
+    {
+      id: 7,
+      src: overlay,
+      live_link: "https://obs-setup.vercel.app/",
+    },
+    {
+      id: 8,
+      src: exam,
+      live_link: "https://junrey-final-exam.vercel.app/",
+    },
+  
   ];
 
   return (
@@ -58,7 +71,9 @@ const Project = () => {
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
               <img
                 src={src}
-                alt=""
+                alt="Site"
+                width={400}
+               
                 className="rounded-md duration-200 hover:scale-105"
               />
               <div className="flex justify-center">
